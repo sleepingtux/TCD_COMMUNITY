@@ -1,0 +1,4 @@
+Directory_Profile: "profile"
+Profile_Battery: "pulse_battery.yaml"
+Profile_Power: "pulse_power.yaml"
+Optimize_Loop: 50
