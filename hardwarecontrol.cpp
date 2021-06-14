@@ -12,88 +12,88 @@ HardwareProfile HardwareControl::GenerateDefaultProfile(string p_name)
    HardwareProfile defaultProfile;
    FanCurve defaultFanCurve;
    defaultProfile.m_name=p_name;
-   defaultFanCurve.m_Offset_TabCurve=30;
-   defaultFanCurve.m_HighTemp=92;
-   defaultFanCurve.m_LowDelay=2;
-   defaultFanCurve.m_LowTemp=72;
-   defaultFanCurve.m_Number_AverageTab=7;
+   defaultFanCurve.m_offset_TabCurve=30;
+   defaultFanCurve.m_highTemp=92;
+   defaultFanCurve.m_lowDelay=2;
+   defaultFanCurve.m_lowTemp=72;
+   defaultFanCurve.m_number_AverageTab=7;
 
    #pragma region Curve {
      // Minimal temp = 30°
      //30°
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
 
      //40°
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
 
      //50°
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
-     defaultFanCurve.m_FanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
+     defaultFanCurve.m_fanCurve.push_back(20);
 
      //60°
-     defaultFanCurve.m_FanCurve.push_back(30);
-     defaultFanCurve.m_FanCurve.push_back(30);
-     defaultFanCurve.m_FanCurve.push_back(30);
-     defaultFanCurve.m_FanCurve.push_back(30);
-     defaultFanCurve.m_FanCurve.push_back(30);
-     defaultFanCurve.m_FanCurve.push_back(40);
-     defaultFanCurve.m_FanCurve.push_back(40);
-     defaultFanCurve.m_FanCurve.push_back(40);
-     defaultFanCurve.m_FanCurve.push_back(40);
-     defaultFanCurve.m_FanCurve.push_back(40);
+     defaultFanCurve.m_fanCurve.push_back(30);
+     defaultFanCurve.m_fanCurve.push_back(30);
+     defaultFanCurve.m_fanCurve.push_back(30);
+     defaultFanCurve.m_fanCurve.push_back(30);
+     defaultFanCurve.m_fanCurve.push_back(30);
+     defaultFanCurve.m_fanCurve.push_back(40);
+     defaultFanCurve.m_fanCurve.push_back(40);
+     defaultFanCurve.m_fanCurve.push_back(40);
+     defaultFanCurve.m_fanCurve.push_back(40);
+     defaultFanCurve.m_fanCurve.push_back(40);
 
      //70°
-     defaultFanCurve.m_FanCurve.push_back(50);
-     defaultFanCurve.m_FanCurve.push_back(50);
-     defaultFanCurve.m_FanCurve.push_back(50);
-     defaultFanCurve.m_FanCurve.push_back(50);
-     defaultFanCurve.m_FanCurve.push_back(50);
-     defaultFanCurve.m_FanCurve.push_back(60);
-     defaultFanCurve.m_FanCurve.push_back(60);
-     defaultFanCurve.m_FanCurve.push_back(60);
-     defaultFanCurve.m_FanCurve.push_back(60);
-     defaultFanCurve.m_FanCurve.push_back(60);
+     defaultFanCurve.m_fanCurve.push_back(50);
+     defaultFanCurve.m_fanCurve.push_back(50);
+     defaultFanCurve.m_fanCurve.push_back(50);
+     defaultFanCurve.m_fanCurve.push_back(50);
+     defaultFanCurve.m_fanCurve.push_back(50);
+     defaultFanCurve.m_fanCurve.push_back(60);
+     defaultFanCurve.m_fanCurve.push_back(60);
+     defaultFanCurve.m_fanCurve.push_back(60);
+     defaultFanCurve.m_fanCurve.push_back(60);
+     defaultFanCurve.m_fanCurve.push_back(60);
 
      //80°
-     defaultFanCurve.m_FanCurve.push_back(80);
-     defaultFanCurve.m_FanCurve.push_back(80);
-     defaultFanCurve.m_FanCurve.push_back(80);
-     defaultFanCurve.m_FanCurve.push_back(80);
-     defaultFanCurve.m_FanCurve.push_back(80);
-     defaultFanCurve.m_FanCurve.push_back(100);
-     defaultFanCurve.m_FanCurve.push_back(100);
-     defaultFanCurve.m_FanCurve.push_back(100);
-     defaultFanCurve.m_FanCurve.push_back(100);
-     defaultFanCurve.m_FanCurve.push_back(100);
+     defaultFanCurve.m_fanCurve.push_back(80);
+     defaultFanCurve.m_fanCurve.push_back(80);
+     defaultFanCurve.m_fanCurve.push_back(80);
+     defaultFanCurve.m_fanCurve.push_back(80);
+     defaultFanCurve.m_fanCurve.push_back(80);
+     defaultFanCurve.m_fanCurve.push_back(100);
+     defaultFanCurve.m_fanCurve.push_back(100);
+     defaultFanCurve.m_fanCurve.push_back(100);
+     defaultFanCurve.m_fanCurve.push_back(100);
+     defaultFanCurve.m_fanCurve.push_back(100);
        #pragma endregion }
 
-    defaultProfile.m_ListCurve.push_back(defaultFanCurve);
+    defaultProfile.m_listCurve.push_back(defaultFanCurve);
 
 
     return defaultProfile;
@@ -109,10 +109,10 @@ HardwareProfile HardwareControl::LoadProfile(string p_profile)
 
     YAML_CPP_API::YAML::Node m_config = YAML_CPP_API::YAML::LoadFile(p_profile);
 
-    HardwareProfile Profile;
-    Profile.m_name = m_config["ProfileName"].as<std::string>();
-    Profile.m_Cmd1 = m_config["Cmd1"].as<std::string>();
-    Profile.m_Cmd2 = m_config["Cmd2"].as<std::string>();
+    HardwareProfile r_profile;
+    r_profile.m_name = m_config["ProfileName"].as<std::string>();
+    r_profile.m_cmd1 = m_config["Cmd1"].as<std::string>();
+    r_profile.m_cmd2 = m_config["Cmd2"].as<std::string>();
     m_dedicatedGpu = m_config["Dedicated_GPU"].as<bool>();
 
     target.push_back("CPU_");
@@ -124,53 +124,53 @@ HardwareProfile HardwareControl::LoadProfile(string p_profile)
     {
         key=target[i];
         key.append("Sonde");
-        Curve.m_SondeNumber = m_config[key].as<std::int32_t>()-1;
+        Curve.m_sondeNumber = m_config[key].as<std::int32_t>()-1;
 
         key=target[i];
         key.append("LowDelay");
-        Curve.m_LowDelay=m_config[key].as<std::int32_t>();
+        Curve.m_lowDelay=m_config[key].as<std::int32_t>();
 
         key=target[i];
         key.append("LowTemp");
-        Curve.m_LowTemp=m_config[key].as<std::int32_t>();
+        Curve.m_lowTemp=m_config[key].as<std::int32_t>();
 
         key=target[i];
         key.append("HighTemp");
-        Curve.m_HighTemp=m_config[key].as<std::int32_t>();
+        Curve.m_highTemp=m_config[key].as<std::int32_t>();
 
         key=target[i];
         key.append("Number_AverageTab");
-        Curve.m_Number_AverageTab=m_config[key].as<std::int32_t>();
+        Curve.m_number_AverageTab=m_config[key].as<std::int32_t>();
 
         key=target[i];
         key.append("Offset_TabCurve");
-        Curve.m_Offset_TabCurve=m_config[key].as<std::int32_t>();
+        Curve.m_offset_TabCurve=m_config[key].as<std::int32_t>();
 
         key=target[i];
         key.append("FanCurve");
         int size= m_config[key].size();
         for (int k = 0;k < size;k++)
         {
-            Curve.m_FanCurve.push_back(m_config[key][k].as<std::int32_t>());
+            Curve.m_fanCurve.push_back(m_config[key][k].as<std::int32_t>());
             //cout<<Curve.m_FanCurve[k]<<endl;
         }
         //we add 100% at the end to be sure that it will be 100% on high temp;
-        Curve.m_FanCurve.push_back(100);
+        Curve.m_fanCurve.push_back(100);
         Curve.m_temp = 0;
         Curve.m_tempTotal = 0;
-        Profile.m_ListCurve.push_back(Curve);
-        if (checkCurve(&Curve))
-            m_ProfileList.push_back(Profile);
+        r_profile.m_listCurve.push_back(Curve);
+        if (CheckCurve(&Curve))
+            m_profileList.push_back(r_profile);
     }
     //m_config=NULL;
-    return Profile;
+    return r_profile;
 }
 
-bool HardwareControl::initialize(string p_directory, string p_power, string p_battery)
+bool HardwareControl::Initialize(string p_directory, string p_power, string p_battery)
 {
-    bool initialize_correct=true;
+    bool r_initialize_correct=true;
     //Get the number of the fan
-    io.GetNumberFans(m_nbFan);
+    m_io.GetNumberFans(m_nbFan);
     cout<<"Number of Fan: "<<m_nbFan<<endl;
 
     //Yaml could only open a file that is in pwd dir, so change to the directory you want.
@@ -209,7 +209,7 @@ bool HardwareControl::initialize(string p_directory, string p_power, string p_ba
     catch ( const YAML::Exception ex)
     {
         cout << "Error: "<< p_power<< " "<< ex.what()<<endl;
-        initialize_correct = false;
+        r_initialize_correct = false;
 
     }
 
@@ -222,25 +222,25 @@ bool HardwareControl::initialize(string p_directory, string p_power, string p_ba
         catch ( const YAML::Exception ex)
         {
             cout << "Error: "<< p_battery<< " "<< ex.what()<<endl;
-            initialize_correct=false;
+            r_initialize_correct=false;
         }
 
-    if (initialize_correct)
+    if (r_initialize_correct)
     {
-        cout<<"Profile: "<<m_ProfileList[0].m_name<<endl;
-        cout<<"Profile: "<<m_ProfileList[1].m_name<<endl;
-        if (m_dbusreader.connect())
+        cout<<"Profile: "<<m_profileList[0].m_name<<endl;
+        cout<<"Profile: "<<m_profileList[1].m_name<<endl;
+        if (m_dbusreader.Connect())
         {
-            m_activeProfile=m_dbusreader.is_OnBattery();
+            m_activeProfile=m_dbusreader.Is_OnBattery();
             m_targetProfile=m_activeProfile;
-            applyProfile(m_activeProfile);
+            ApplyProfile(m_activeProfile);
         }
         //dbus connnexion pb
         else
         {
                 m_activeProfile=0;
                 m_targetProfile=m_activeProfile;
-                applyProfile(m_activeProfile);
+                ApplyProfile(m_activeProfile);
         }
 
     }
@@ -253,88 +253,88 @@ bool HardwareControl::initialize(string p_directory, string p_power, string p_ba
     //return to default directory
     chdir(previousWD.c_str());
     //cout<<"PWD: "<<getcwd(cwd, sizeof (cwd))<<endl;
-    return initialize_correct;
+    return r_initialize_correct;
 }
 
 FanSetting HardwareControl::FoundTargetSpeed()
 {
-    FanSetting returnFanSetting;
-    returnFanSetting.m_FanDelay=99;
-    returnFanSetting.m_FanSpeed=0;
+    FanSetting r_fanSetting;
+    r_fanSetting.m_fanDelay=99;
+    r_fanSetting.m_fanSpeed=0;
     int temp = 0;
     int tmpspeed = 0;
     int tmpdelay = 0;
     unsigned long access = 0;
     bool stop = false;
     int i = 0;
-    int size = m_ProfileList[m_activeProfile].m_ListCurve.size();
+    int size = m_profileList[m_activeProfile].m_listCurve.size();
     FanCurve * currentFanCurve;
     while (i < size  and !stop)
     {
           //For easy access
-          currentFanCurve = &m_ProfileList[m_activeProfile].m_ListCurve[i];
+          currentFanCurve = &m_profileList[m_activeProfile].m_listCurve[i];
 
           temp = 0;
-          io.GetFanTemperature(currentFanCurve->m_SondeNumber, temp);
+          m_io.GetFanTemperature(currentFanCurve->m_sondeNumber, temp);
           currentFanCurve->m_temp=temp;
 
           //limit the number of element for the average calcul
-          if (currentFanCurve->m_TempTab.size() > (currentFanCurve->m_Number_AverageTab-1))
+          if (currentFanCurve->m_tempTab.size() > (currentFanCurve->m_number_AverageTab-1))
           {
-              currentFanCurve->m_tempTotal-= currentFanCurve->m_TempTab.back();
-              currentFanCurve->m_TempTab.pop_back();
+              currentFanCurve->m_tempTotal-= currentFanCurve->m_tempTab.back();
+              currentFanCurve->m_tempTab.pop_back();
 
           }
-          currentFanCurve->m_TempTab.insert(currentFanCurve->m_TempTab.begin(),temp);
+          currentFanCurve->m_tempTab.insert(currentFanCurve->m_tempTab.begin(),temp);
           currentFanCurve->m_tempTotal+=temp;
-          access = (currentFanCurve->m_tempTotal/currentFanCurve->m_TempTab.size())-currentFanCurve->m_Offset_TabCurve;
+          access = (currentFanCurve->m_tempTotal/currentFanCurve->m_tempTab.size())-currentFanCurve->m_offset_TabCurve;
           //temp is to high so we stop immediatly
-          if ((access > currentFanCurve->m_FanCurve.size()-1 and access >=0) or temp >= currentFanCurve->m_HighTemp or temp==0)
+          if ((access > currentFanCurve->m_fanCurve.size()-1 and access >=0) or temp >= currentFanCurve->m_highTemp or temp==0)
           {
-              access = currentFanCurve->m_FanCurve.size()-1;
+              access = currentFanCurve->m_fanCurve.size()-1;
               stop = true;
           }
           else
               if (access < 0)
                   access = 0;
 
-          tmpspeed = currentFanCurve->m_FanCurve[access];
-          if (tmpspeed > returnFanSetting.m_FanSpeed)
-              returnFanSetting.m_FanSpeed = tmpspeed;
+          tmpspeed = currentFanCurve->m_fanCurve[access];
+          if (tmpspeed > r_fanSetting.m_fanSpeed)
+              r_fanSetting.m_fanSpeed = tmpspeed;
 
-          tmpdelay = currentFanCurve->m_LowDelay;
-          if (temp > currentFanCurve->m_LowTemp)
-                        returnFanSetting.m_FanDelay = 1;
+          tmpdelay = currentFanCurve->m_lowDelay;
+          if (temp > currentFanCurve->m_lowTemp)
+                        r_fanSetting.m_fanDelay = 1;
           else
-              if (returnFanSetting.m_FanDelay > tmpdelay)
-                        returnFanSetting.m_FanDelay = tmpdelay;
+              if (r_fanSetting.m_fanDelay > tmpdelay)
+                        r_fanSetting.m_fanDelay = tmpdelay;
 
 
           //Debug stuff
           cout<<"Fan number: " << i <<endl;
           cout<<"Temp: "<<temp<<endl;
-          cout<<"Temp Total: "<<currentFanCurve->m_tempTotal<<" | Number elements: "<<currentFanCurve->m_TempTab.size()<<endl;
-          cout<<"Offset: "<<currentFanCurve->m_Offset_TabCurve<<endl;
-          cout<<"Average Temp: "<<(currentFanCurve->m_tempTotal/currentFanCurve->m_TempTab.size())<<endl;
+          cout<<"Temp Total: "<<currentFanCurve->m_tempTotal<<" | Number elements: "<<currentFanCurve->m_tempTab.size()<<endl;
+          cout<<"Offset: "<<currentFanCurve->m_offset_TabCurve<<endl;
+          cout<<"Average Temp: "<<(currentFanCurve->m_tempTotal/currentFanCurve->m_tempTab.size())<<endl;
           cout<<"Indice: "<<access<<endl;
 
           i++;
     }
 
-    return returnFanSetting;
+    return r_fanSetting;
 }
 
 void HardwareControl::SetFanSpeed(int p_speed)
 {
     for (int i =0; i<m_nbFan; i++)
-        io.SetFanSpeedPercent(i, p_speed);
+        m_io.SetFanSpeedPercent(i, p_speed);
 }
 
 
-void HardwareControl::run(int p_optimizeLoop)
+void HardwareControl::Run(int p_optimizeLoop)
 {
   m_run = true;
-  io.SetEnableModeSet(1);
+  m_io.SetEnableModeSet(1);
   //int nbFan = 0;
   m_speed= 0;
   int previousSpeed=0;
@@ -350,10 +350,10 @@ void HardwareControl::run(int p_optimizeLoop)
       {
           cout<<"Detect Profile Change"<<endl;
           m_activeProfile = m_targetProfile;
-          for (size_t i = 0; i < m_ProfileList[m_activeProfile].m_ListCurve.size(); i++ )
+          for (size_t i = 0; i < m_profileList[m_activeProfile].m_listCurve.size(); i++ )
           {
-              m_ProfileList[m_activeProfile].m_ListCurve[i].m_TempTab.clear();
-              m_ProfileList[m_activeProfile].m_ListCurve[i].m_tempTotal = 0;
+              m_profileList[m_activeProfile].m_listCurve[i].m_tempTab.clear();
+              m_profileList[m_activeProfile].m_listCurve[i].m_tempTotal = 0;
 
           }
       }
@@ -379,7 +379,7 @@ void HardwareControl::run(int p_optimizeLoop)
       m_speed=m_ProfileList[m_activeProfile].m_FanCurve[access];
       */
       workFanSetting = FoundTargetSpeed();
-      m_speed = workFanSetting.m_FanSpeed;
+      m_speed = workFanSetting.m_fanSpeed;
       // do not set speed if it was the same as previous
       // i add a set every 100 loop because sometimes fan control role back to automatic if no update...
       //cout<<"NBLoop: "<<nbLoopSameSpeed<<endl;
@@ -411,8 +411,8 @@ void HardwareControl::run(int p_optimizeLoop)
       cout << "Fan Speed: "<< m_speed<<endl;
       cout << "Wait time: "<< delay<<endl<<endl;; */
       cout << "Fan Speed: "<< m_speed<<endl;
-      cout << "Wait time: "<< workFanSetting.m_FanDelay<<endl<<endl;;
-      sleep(workFanSetting.m_FanDelay);
+      cout << "Wait time: "<< workFanSetting.m_fanDelay<<endl<<endl;;
+      sleep(workFanSetting.m_fanDelay);
 
       //m_thread = boost::thread(RunThread,m_ProfileList[m_activeProfile]);
       //m_thread.join();
@@ -423,69 +423,69 @@ void HardwareControl::run(int p_optimizeLoop)
   SetFanSpeed(100);
   //io.SetFanSpeedPercent(nbFan,100);
   sleep(3);
-  io.SetFansAuto();
+  m_io.SetFansAuto();
 
 }
 
-void HardwareControl::stop()
+void HardwareControl::Stop()
 {
   cout<< "HardwareControl::stop()"<<endl;
   m_run=false;
   m_thread_Monitor_Power.~thread();
-  m_dbusreader.remove_signal();
+  m_dbusreader.Remove_signal();
 }
 
 
 //check that settings are correct
-bool HardwareControl::checkCurve(FanCurve * p_fanCurve)
+bool HardwareControl::CheckCurve(FanCurve * p_fanCurve)
 {
-    bool answer = true;
+    bool r_answer = true;
     // We lock to 10 values because if there is too much value temp is false
-    if ( p_fanCurve->m_Number_AverageTab > 10)
-        p_fanCurve->m_Number_AverageTab = 7;
+    if ( p_fanCurve->m_number_AverageTab > 10)
+        p_fanCurve->m_number_AverageTab = 7;
     //Maximum temp is 100° to protect the cpu
-    if ( p_fanCurve->m_HighTemp > 100)
-        p_fanCurve->m_HighTemp = 100;
+    if ( p_fanCurve->m_highTemp > 100)
+        p_fanCurve->m_highTemp = 100;
     //LowDelay could only be 1 or 2
-    if (p_fanCurve->m_LowDelay > 2 or p_fanCurve->m_LowDelay < 1 )
-        p_fanCurve->m_LowDelay=2;
+    if (p_fanCurve->m_lowDelay > 2 or p_fanCurve->m_lowDelay < 1 )
+        p_fanCurve->m_lowDelay=2;
     //The begining of the curve could not be down to 80°
-    if (p_fanCurve->m_Offset_TabCurve > 80)
-        answer = false;
+    if (p_fanCurve->m_offset_TabCurve > 80)
+        r_answer = false;
     //If the curve is lower then 10 values the profile is not good  ==> error
-    if (p_fanCurve->m_FanCurve.size() < 10)
-        answer = false;
+    if (p_fanCurve->m_fanCurve.size() < 10)
+        r_answer = false;
 
-    return answer;
+    return r_answer;
 }
 
-void HardwareControl::applyProfile(int p_numProfile)
+void HardwareControl::ApplyProfile(int p_numProfile)
 {
     m_targetProfile = p_numProfile;
     // Wait until proilfe is active before apply the cmd;
     while (m_targetProfile != m_activeProfile)
         sleep(1);
 
-    if ( m_ProfileList[p_numProfile].m_Cmd1 != "" )
-        system(m_ProfileList[p_numProfile].m_Cmd1.data());
-    if ( m_ProfileList[p_numProfile].m_Cmd2 != "" )
-        system(m_ProfileList[p_numProfile].m_Cmd2.data());
+    if ( m_profileList[p_numProfile].m_cmd1 != "" )
+        system(m_profileList[p_numProfile].m_cmd1.data());
+    if ( m_profileList[p_numProfile].m_cmd2 != "" )
+        system(m_profileList[p_numProfile].m_cmd2.data());
 }
 
-void HardwareControl::monitorPowerSource()
+void HardwareControl::MonitorPowerSource()
 {
-    m_dbusreader.prepare_signal();
+    m_dbusreader.Prepare_signal();
     while (m_run) {
-        m_dbusreader.wait_Event();
-        applyProfile(m_dbusreader.is_OnBattery());
+        m_dbusreader.Wait_Event();
+        ApplyProfile(m_dbusreader.Is_OnBattery());
         sleep(1);
 
     }
 }
 
-void HardwareControl::startPowerMonitor()
+void HardwareControl::StartPowerMonitor()
 {
-    m_thread_Monitor_Power=std::thread (&HardwareControl::monitorPowerSource, this);
+    m_thread_Monitor_Power=std::thread (&HardwareControl::MonitorPowerSource, this);
     m_thread_Monitor_Power.detach();
 
 }

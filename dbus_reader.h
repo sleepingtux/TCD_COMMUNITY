@@ -12,11 +12,11 @@ class dbus_reader
 {
 public:
     dbus_reader();
-    bool connect();
-    void wait_Event();
-    bool is_OnBattery();
-    void prepare_signal();
-    void remove_signal();
+    bool Connect();
+    void Wait_Event();
+    bool Is_OnBattery();
+    void Prepare_signal();
+    void Remove_signal();
 
 
 private:
@@ -24,6 +24,8 @@ private:
     DBusConnection * m_conn;
     DBusMessage * m_msg;
 
+
+private:
     double get_double_property(DBusConnection *connection, const char *bus_name, const char *path, const char *iface, const char *propname, DBusError *error);
     bool get_bool_property(DBusConnection *connection, const char *bus_name, const char *path, const char *iface, const char *propname, DBusError *error);
     unsigned int get_uinteger_property(DBusConnection *connection, const char *bus_name, const char *path, const char *iface, const char *propname, DBusError *error);

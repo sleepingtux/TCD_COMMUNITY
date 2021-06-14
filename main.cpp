@@ -9,7 +9,7 @@ HardwareControl m_hardwareControl;
 
 void signal_callback_handler(int signum) {
    cout << "Caught signal " << signum << endl;
-   m_hardwareControl.stop();
+   m_hardwareControl.Stop();
    // Terminate program
    //exit(signum);
 }
@@ -45,9 +45,9 @@ int main()
        return 9;
    }
 
-    initialize=m_hardwareControl.initialize(directory,power,battery);
+    initialize=m_hardwareControl.Initialize(directory,power,battery);
     if (initialize)
-        m_hardwareControl.run(optimizeLoop);
+        m_hardwareControl.Run(optimizeLoop);
     else
         cout<<"ERROR Service could not initialize, check settings files!!!"<<endl;
     return 0;

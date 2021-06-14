@@ -183,7 +183,7 @@ unsigned int dbus_reader::extract_uinteger_from_variant(DBusMessage *reply, DBus
 
 
 
-bool dbus_reader::connect()
+bool dbus_reader::Connect()
 {
     bool returnBool=true;
     dbus_error_init(&m_err);
@@ -202,16 +202,16 @@ bool dbus_reader::connect()
      return returnBool;
 }
 
-void dbus_reader::prepare_signal()
+void dbus_reader::Prepare_signal()
 {
     dbus_bus_add_match(m_conn, "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',path='/org/freedesktop/UPower',type='signal'", &m_err);
 }
-void dbus_reader::remove_signal()
+void dbus_reader::Remove_signal()
 {
     dbus_bus_remove_match(m_conn, "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',path='/org/freedesktop/UPower',type='signal'", &m_err);
 }
 
-void dbus_reader::wait_Event()
+void dbus_reader::Wait_Event()
 {
 
     //wait for event
@@ -228,7 +228,7 @@ void dbus_reader::wait_Event()
 
 }
 
-bool dbus_reader::is_OnBattery()
+bool dbus_reader::Is_OnBattery()
 {
     return get_bool_property(m_conn, "org.freedesktop.UPower",
                              "/org/freedesktop/UPower",

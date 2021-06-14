@@ -8,20 +8,20 @@ using namespace std;
 
 struct FanSetting
 {
-    int m_FanSpeed;
-    int m_FanDelay;
+    int m_fanSpeed;
+    int m_fanDelay;
 };
 
 struct FanCurve
 {
-    int m_LowDelay;
-    int m_LowTemp;
-    int m_HighTemp;
-    unsigned long m_Number_AverageTab;
-    int m_Offset_TabCurve;
-    vector <int> m_FanCurve;
-    int m_SondeNumber;
-    vector <int> m_TempTab;
+    int m_lowDelay;
+    int m_lowTemp;
+    int m_highTemp;
+    unsigned long m_number_AverageTab;
+    int m_offset_TabCurve;
+    vector <int> m_fanCurve;
+    int m_sondeNumber;
+    vector <int> m_tempTab;
     int m_tempTotal;
     int m_temp;
 };
@@ -29,9 +29,9 @@ struct FanCurve
 struct HardwareProfile
 {
     string m_name;
-    string m_Cmd1;
-    string m_Cmd2;
-    vector <FanCurve> m_ListCurve;
+    string m_cmd1;
+    string m_cmd2;
+    vector <FanCurve> m_listCurve;
 };
 
 
