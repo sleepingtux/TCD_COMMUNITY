@@ -18,7 +18,6 @@ int main()
 {
 
     string directory,battery,power;
-    int optimizeLoop = 0;
     bool initialize = false;
     //catch signal
     signal(SIGINT, signal_callback_handler);
@@ -35,7 +34,6 @@ int main()
         battery = m_config["Profile_Battery"].as<std::string>();
         power = m_config["Profile_Power"].as<std::string>();
 
-        optimizeLoop = m_config["Optimize_Loop"].as<std::int32_t>();
         m_config=NULL;
     }
     catch ( const YAML::Exception ex)
@@ -47,7 +45,10 @@ int main()
 
     initialize=m_hardwareControl.Initialize(directory,power,battery);
     if (initialize)
-        m_hardwareControl.Run(optimizeLoop);
+    {
+        m_hardwareControl.StartPowerMonitor();
+        m_hardwareControl.Run();
+    }
     else
         cout<<"ERROR Service could not initialize, check settings files!!!"<<endl;
     return 0;

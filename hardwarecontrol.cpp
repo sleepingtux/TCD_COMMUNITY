@@ -288,7 +288,7 @@ FanSetting HardwareControl::FoundTargetSpeed()
           currentFanCurve->m_tempTab.insert(currentFanCurve->m_tempTab.begin(),temp);
           currentFanCurve->m_tempTotal+=temp;
           access = (currentFanCurve->m_tempTotal/currentFanCurve->m_tempTab.size())-currentFanCurve->m_offset_TabCurve;
-          //temp is to high so we stop immediatly
+          //temp is to high so we stop immediatly to search over curve and set maximum speed
           if ((access > currentFanCurve->m_fanCurve.size()-1 and access >=0) or temp >= currentFanCurve->m_highTemp or temp==0)
           {
               access = currentFanCurve->m_fanCurve.size()-1;
@@ -331,14 +331,14 @@ void HardwareControl::SetFanSpeed(int p_speed)
 }
 
 
-void HardwareControl::Run(int p_optimizeLoop)
+void HardwareControl::Run()
 {
   m_run = true;
   m_io.SetEnableModeSet(1);
-  //int nbFan = 0;
+
   m_speed= 0;
-  int previousSpeed=0;
-  int nbLoopSameSpeed=0;
+  //int previousSpeed=0;
+  //int nbLoopSameSpeed=0;
   FanSetting workFanSetting;
 
   cout<< "HardwareControl::run()"<<endl;
@@ -348,7 +348,7 @@ void HardwareControl::Run(int p_optimizeLoop)
       //detect that the profile change so reset the averageTemp
       if (m_targetProfile != m_activeProfile)
       {
-          cout<<"Detect Profile Change"<<endl;
+
           m_activeProfile = m_targetProfile;
           for (size_t i = 0; i < m_profileList[m_activeProfile].m_listCurve.size(); i++ )
           {
@@ -358,58 +358,25 @@ void HardwareControl::Run(int p_optimizeLoop)
           }
       }
 
-       /*
-      io.GetFanTemperature(nbFan, m_temp);
-
-      if (m_tempTab.size() > m_ProfileList[m_activeProfile].m_Number_AverageTab)
-      {
-          m_tempTotal-= m_tempTab.back();
-          m_tempTab.pop_back();
-
-      }
-      m_tempTab.insert(m_tempTab.begin(),m_temp);
-      m_tempTotal+=m_temp;
-      access=(m_tempTotal/m_tempTab.size())-m_ProfileList[m_activeProfile].m_Offset_TabCurve;
-      if ((access > m_ProfileList[m_activeProfile].m_FanCurve.size()-1 and access >=0) or m_temp >= m_ProfileList[m_activeProfile].m_HighTemp )
-          access = m_ProfileList[m_activeProfile].m_FanCurve.size()-1;
-      else
-          if (access < 0)
-              access = 0;
-
-      m_speed=m_ProfileList[m_activeProfile].m_FanCurve[access];
-      */
       workFanSetting = FoundTargetSpeed();
       m_speed = workFanSetting.m_fanSpeed;
+
       // do not set speed if it was the same as previous
       // i add a set every 100 loop because sometimes fan control role back to automatic if no update...
       //cout<<"NBLoop: "<<nbLoopSameSpeed<<endl;
       //cout<<"Previous Speed: "<<previousSpeed<<endl;
       //cout<<"New speed: "<<m_speed<<endl;
-      if (m_speed != previousSpeed or nbLoopSameSpeed >p_optimizeLoop )
-      {
-        cout<<"====> Detect Speed change"<<endl;
+      //if (m_speed != previousSpeed or nbLoopSameSpeed >p_optimizeLoop )
+//      {
+//        cout<<"====> Detect Speed change"<<endl;
         SetFanSpeed(m_speed);
-        //io.SetFanSpeedPercent(nbFan, m_speed);
-        //io.SetFanSpeedPercent(1, m_speed);
-        previousSpeed=m_speed;
-        nbLoopSameSpeed=0;
-      }
-      nbLoopSameSpeed+=1;
+        //previousSpeed=m_speed;
+        //nbLoopSameSpeed=0;
+//      }
+      //nbLoopSameSpeed+=1;
 
-      /*
-      if (m_temp > m_ProfileList[m_activeProfile].m_LowTemp )
-          delay = 1;
-      else
-          delay = m_ProfileList[m_activeProfile].m_LowDelay;
-       */
 
       //Debug stuff
- /*     cout << "Temp: "<< m_temp  <<endl;
-      cout << "Temp Totale: "<< m_tempTotal<<endl;
-      cout << "Temp Moyenne: "<< m_tempTotal/m_tempTab.size()<<endl;
-      cout << "Temp Indice: " << access <<endl;
-      cout << "Fan Speed: "<< m_speed<<endl;
-      cout << "Wait time: "<< delay<<endl<<endl;; */
       cout << "Fan Speed: "<< m_speed<<endl;
       cout << "Wait time: "<< workFanSetting.m_fanDelay<<endl<<endl;;
       sleep(workFanSetting.m_fanDelay);
@@ -419,10 +386,10 @@ void HardwareControl::Run(int p_optimizeLoop)
       //sleep(1);
    }
 
-  cout<<"Fan at 100% during 3s"<<endl;
-  SetFanSpeed(100);
+  //cout<<"Fan at 100% during 3s"<<endl;
+  //SetFanSpeed(100);
   //io.SetFanSpeedPercent(nbFan,100);
-  sleep(3);
+  //sleep(3);
   m_io.SetFansAuto();
 
 }
@@ -431,8 +398,12 @@ void HardwareControl::Stop()
 {
   cout<< "HardwareControl::stop()"<<endl;
   m_run=false;
+ // If we do that we are locked. Need to find a solution
+ // m_dbusreader.Remove_signal();
+ // Not really good to kill the thread. :/
   m_thread_Monitor_Power.~thread();
-  m_dbusreader.Remove_signal();
+  cout<< "HardwareControl::stop() END"<<endl;
+
 }
 
 
@@ -461,6 +432,8 @@ bool HardwareControl::CheckCurve(FanCurve * p_fanCurve)
 
 void HardwareControl::ApplyProfile(int p_numProfile)
 {
+    cout<<"Apply Profile: "<<m_profileList[p_numProfile].m_name <<endl;
+
     m_targetProfile = p_numProfile;
     // Wait until proilfe is active before apply the cmd;
     while (m_targetProfile != m_activeProfile)

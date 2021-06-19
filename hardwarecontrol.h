@@ -24,7 +24,7 @@ public:
 
 public:
     void StartPowerMonitor();
-    void Run(int p_optimizeLoop);
+    void Run();
     void Stop();
 
 
@@ -40,7 +40,6 @@ private:
     vector <HardwareProfile> m_profileList;
     TuxedoIOAPI m_io;
     int m_nbFan;
-    int m_optimizeLoop;
     bool m_dedicatedGpu;
     //vector <int> m_ListSonde;
     dbus_reader m_dbusreader;
