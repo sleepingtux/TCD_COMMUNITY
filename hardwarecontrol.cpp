@@ -311,7 +311,7 @@ FanSetting HardwareControl::FoundTargetSpeed()
 
 
           //Debug stuff
-          cout<<"Fan number: " << i <<endl;
+          cout<<"Curve number: (0==>CPU | 1==>GPU) " << i <<endl;
           cout<<"Temp: "<<temp<<endl;
           cout<<"Temp Total: "<<currentFanCurve->m_tempTotal<<" | Number elements: "<<currentFanCurve->m_tempTab.size()<<endl;
           cout<<"Offset: "<<currentFanCurve->m_offset_TabCurve<<endl;
