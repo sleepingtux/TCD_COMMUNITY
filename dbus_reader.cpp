@@ -208,7 +208,8 @@ void dbus_reader::Prepare_signal()
 }
 void dbus_reader::Remove_signal()
 {
-    dbus_bus_remove_match(m_conn, "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',path='/org/freedesktop/UPower',type='signal'", &m_err);
+    dbus_connection_unref(m_conn);
+     //dbus_bus_remove_match(m_conn, "interface='org.freedesktop.DBus.Properties',member='PropertiesChanged',path='/org/freedesktop/UPower',type='signal'", &m_err);
 }
 
 void dbus_reader::Wait_Event()

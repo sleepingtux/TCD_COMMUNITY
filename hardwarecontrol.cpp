@@ -381,15 +381,13 @@ void HardwareControl::Run()
       cout << "Wait time: "<< workFanSetting.m_fanDelay<<endl<<endl;;
       sleep(workFanSetting.m_fanDelay);
 
-      //m_thread = boost::thread(RunThread,m_ProfileList[m_activeProfile]);
-      //m_thread.join();
-      //sleep(1);
    }
 
   //cout<<"Fan at 100% during 3s"<<endl;
   //SetFanSpeed(100);
   //io.SetFanSpeedPercent(nbFan,100);
   //sleep(3);
+  cout<<"Set Fan speed to automatic mode"<<endl;
   m_io.SetFansAuto();
 
 }
@@ -398,11 +396,9 @@ void HardwareControl::Stop()
 {
   cout<< "HardwareControl::stop()"<<endl;
   m_run=false;
- // If we do that we are locked. Need to find a solution
- // m_dbusreader.Remove_signal();
+  m_dbusreader.Remove_signal();
  // Not really good to kill the thread. :/
   m_thread_Monitor_Power.~thread();
-  cout<< "HardwareControl::stop() END"<<endl;
 
 }
 
@@ -450,7 +446,8 @@ void HardwareControl::MonitorPowerSource()
     m_dbusreader.Prepare_signal();
     while (m_run) {
         m_dbusreader.Wait_Event();
-        ApplyProfile(m_dbusreader.Is_OnBattery());
+        if (m_run)
+            ApplyProfile(m_dbusreader.Is_OnBattery());
         sleep(1);
 
     }
