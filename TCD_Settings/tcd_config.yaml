@@ -1,3 +1,3 @@
 Directory_Profile: "profile"
-Profile_Battery: "pulse_battery.yaml"
-Profile_Power: "pulse_power.yaml"
+Profile_Battery: "Generic_GPU_battery.yaml"
+Profile_Power: "Generic_GPU_power.yaml"

@@ -117,13 +117,16 @@ HardwareProfile HardwareControl::LoadProfile(string p_profile)
 
     target.push_back("CPU_");
     if(m_dedicatedGpu)
-        target.push_back("GPU_");
-
-    FanCurve Curve;
-    for (std::size_t i=0; i<target.size(); i++)
     {
+        cout<<"Computer Have a dedicated GPU"<<endl;
+        target.push_back("GPU_");
+    }
+    int target_size = target.size();
+    for (int i=0;i<target_size;i++)
+    {
+        FanCurve Curve;
         key=target[i];
-        key.append("Sonde");
+        key.append("Sensor");
         Curve.m_sondeNumber = m_config[key].as<std::int32_t>()-1;
 
         key=target[i];
@@ -158,10 +161,12 @@ HardwareProfile HardwareControl::LoadProfile(string p_profile)
         Curve.m_fanCurve.push_back(100);
         Curve.m_temp = 0;
         Curve.m_tempTotal = 0;
-        r_profile.m_listCurve.push_back(Curve);
-        if (CheckCurve(&Curve))
-            m_profileList.push_back(r_profile);
+
+        //if (CheckCurve(&Curve))
+           r_profile.m_listCurve.push_back(Curve);
+        cout<<"Number of curve launched: "<<r_profile.m_listCurve.size()<<endl;
     }
+    m_profileList.push_back(r_profile);
     //m_config=NULL;
     return r_profile;
 }

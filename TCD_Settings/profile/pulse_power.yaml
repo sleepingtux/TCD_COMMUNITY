@@ -2,7 +2,7 @@ ProfileName: "Pulse Power"
 Cmd1: "sleep 5 && /opt/RyzenAdj/ryzenadj --stapm-limit=25000 --fast-limit=25000 --slow-limit=25000"
 Cmd2: ""
 Dedicated_GPU: false
-CPU_Sonde: 1
+CPU_Sensor: 1
 CPU_LowDelay: 2
 CPU_LowTemp: 72
 CPU_HighTemp: 92
