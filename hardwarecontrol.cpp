@@ -269,7 +269,7 @@ FanSetting HardwareControl::FoundTargetSpeed()
     int temp = 0;
     int tmpspeed = 0;
     int tmpdelay = 0;
-    unsigned long access = 0;
+    int access = 0;
     bool stop = false;
     int i = 0;
     int size = m_profileList[m_activeProfile].m_listCurve.size();
@@ -293,8 +293,9 @@ FanSetting HardwareControl::FoundTargetSpeed()
           currentFanCurve->m_tempTab.insert(currentFanCurve->m_tempTab.begin(),temp);
           currentFanCurve->m_tempTotal+=temp;
           access = (currentFanCurve->m_tempTotal/currentFanCurve->m_tempTab.size())-currentFanCurve->m_offset_TabCurve;
+          //cout<<"Access : "<<access<<endl;
           //temp is to high so we stop immediatly to search over curve and set maximum speed
-          if ((access > currentFanCurve->m_fanCurve.size()-1 and access >=0) or temp >= currentFanCurve->m_highTemp or temp==0)
+          if ((access > currentFanCurve->m_fanCurve.size()-1 and access >0) or temp >= currentFanCurve->m_highTemp or temp==0)
           {
               access = currentFanCurve->m_fanCurve.size()-1;
               stop = true;
@@ -316,12 +317,12 @@ FanSetting HardwareControl::FoundTargetSpeed()
 
 
           //Debug stuff
-          cout<<"Curve number: (0==>CPU | 1==>GPU) " << i <<endl;
-          cout<<"Temp: "<<temp<<endl;
-          cout<<"Temp Total: "<<currentFanCurve->m_tempTotal<<" | Number elements: "<<currentFanCurve->m_tempTab.size()<<endl;
-          cout<<"Offset: "<<currentFanCurve->m_offset_TabCurve<<endl;
-          cout<<"Average Temp: "<<(currentFanCurve->m_tempTotal/currentFanCurve->m_tempTab.size())<<endl;
-          cout<<"Indice: "<<access<<endl;
+          //cout<<"Curve number: (0==>CPU | 1==>GPU) " << i <<endl;
+          //cout<<"Temp: "<<temp<<endl;
+          //cout<<"Temp Total: "<<currentFanCurve->m_tempTotal<<" | Number elements: "<<currentFanCurve->m_tempTab.size()<<endl;
+          //cout<<"Offset: "<<currentFanCurve->m_offset_TabCurve<<endl;
+          //cout<<"Average Temp: "<<(currentFanCurve->m_tempTotal/currentFanCurve->m_tempTab.size())<<endl;
+          //cout<<"Indice: "<<access<<endl;
 
           i++;
     }
@@ -382,8 +383,8 @@ void HardwareControl::Run()
 
 
       //Debug stuff
-      cout << "Fan Speed: "<< m_speed<<endl;
-      cout << "Wait time: "<< workFanSetting.m_fanDelay<<endl<<endl;;
+      //cout << "Fan Speed: "<< m_speed<<endl;
+      //cout << "Wait time: "<< workFanSetting.m_fanDelay<<endl<<endl;;
       sleep(workFanSetting.m_fanDelay);
 
    }
