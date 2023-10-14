@@ -29,7 +29,7 @@ int main()
     vector <int> exclude;
     try
     {
-        YAML_CPP_API::YAML::Node m_config = YAML_CPP_API::YAML::LoadFile("tcd_config.yaml");
+        YAML::Node m_config = YAML::LoadFile("tcd_config.yaml");
         directory = m_config["Directory_Profile"].as<std::string>();
         battery = m_config["Profile_Battery"].as<std::string>();
         power = m_config["Profile_Power"].as<std::string>();

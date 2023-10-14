@@ -107,7 +107,7 @@ HardwareProfile HardwareControl::LoadProfile(string p_profile)
     string key;
     vector <string> target;
 
-    YAML_CPP_API::YAML::Node m_config = YAML_CPP_API::YAML::LoadFile(p_profile);
+    YAML::Node m_config = YAML::LoadFile(p_profile);
 
     HardwareProfile r_profile;
     r_profile.m_name = m_config["ProfileName"].as<std::string>();
